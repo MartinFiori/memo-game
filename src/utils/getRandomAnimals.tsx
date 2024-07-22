@@ -39,8 +39,8 @@ export default function pairGenerator(amount: number): IAnimal[] {
     const animal = selectedAmountOfAnimals[i];
     const id1 = i;
     const id2 = i + amount;
-    pairs[id1] = { id: id1, name: animal, id_match: id2 };
-    pairs[id2] = { id: i + amount, name: animal, id_match: id1 };
+    pairs[id1] = { id: id1, name: animal, match_fount: false };
+    pairs[id2] = { id: i + amount, name: animal, match_fount: false };
   }
 
   const sortedPairs = randomSort(pairs) as IAnimal[];

@@ -1,7 +1,5 @@
-import { useState } from "react";
-import logo from './jph.png'
-import "./styles.css";
-import Board from "./Components/Board";
+import Board from "./Components/Board/Board";
+import "./styles.scss";
 
 export default function App() {
   return (
