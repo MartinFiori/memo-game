@@ -1,6 +1,7 @@
 import { ReactElement } from "react";
 import { IAnimal } from "../../types";
 import './AnimalCard.scss'
+import img from '../../assets/animals/Ant.png'
 
 interface Props {
   animal: IAnimal;
@@ -16,10 +17,13 @@ export default function AnimalCard({
   return (
     <section
       onClick={() => handleSetPairs(animal)}
-      className={`animalCard ${animal.match_found ? "match" : ""} ${pair.some((p) => p.id === animal.id) ? "selected" : ""
+      className={`animal-card ${animal.match_found ? "match" : ""} ${pair.some((p) => p.id === animal.id) ? "selected" : ""
         } `}
     >
-      {animal.name}
+      <img src={`/assets/animals${animal.src}`} alt={animal.name} />
+      <h2>
+        {animal.name}
+      </h2>
     </section>
   );
 }

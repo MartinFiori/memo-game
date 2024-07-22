@@ -1,34 +1,9 @@
 import { IAnimal } from "../types";
+import animals from '../data.json'
 
 export default function pairGenerator(amount: number): IAnimal[] {
   if (!amount) return [];
-  const animals = [
-    "Lion",
-    "Zebra",
-    "Dolphin",
-    "Penguin",
-    "Giraffe",
-    "Koala",
-    "Elephant",
-    "Tiger",
-    "Snake",
-    "Eagle",
-    "Wolf",
-    "Bear",
-    "Butterfly",
-    "Bee",
-    "Ant",
-    "Clownfish",
-    "Seahorse",
-    "Octopus",
-    "Whale",
-    "Shark",
-    "Hippopotamus",
-    "Gorilla",
-    "Panda",
-    "Kangaroo",
-    "Camel",
-  ];
+
   const sortedAnimals = randomSort(animals);
 
   const selectedAmountOfAnimals = sortedAnimals.slice(0, amount);
@@ -39,14 +14,14 @@ export default function pairGenerator(amount: number): IAnimal[] {
     const animal = selectedAmountOfAnimals[i];
     const id1 = i;
     const id2 = i + amount;
-    pairs[id1] = { id: id1, name: animal, match_found: false };
-    pairs[id2] = { id: i + amount, name: animal, match_found: false };
+    pairs[id1] = { ...animal, id: id1, };
+    pairs[id2] = { ...animal, id: i + amount, };
   }
 
   const sortedPairs = randomSort(pairs) as IAnimal[];
   return sortedPairs;
 }
 
-function randomSort(arr: string[] | IAnimal[]) {
+function randomSort<T>(arr: T[]): T[] {
   return arr.sort(() => Math.random() - 0.5);
 }

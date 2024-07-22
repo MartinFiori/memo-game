@@ -53,7 +53,7 @@ export default function AnimalList({
   }
 
   return (
-    <div>
+    <div className="animal-container">
       {animals?.map((animal: IAnimal) => (
         <AnimalCard key={animal.id} animal={animal} handleSetPairs={handleSetPairs} pair={pair} />
       ))}

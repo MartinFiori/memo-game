@@ -1,27 +1,152 @@
 [
-  { "name": "Lion", "src": "replace_with_lion_image.svg" },
-  { "name": "Zebra", "src": "replace_with_zebra_image.svg" },
-  { "name": "Dolphin", "src": "replace_with_dolphin_image.svg" },
-  { "name": "Penguin", "src": "replace_with_penguin_image.svg" },
-  { "name": "Giraffe", "src": "replace_with_giraffe_image.svg" },
-  { "name": "Koala", "src": "replace_with_koala_image.svg" },
-  { "name": "Elephant", "src": "replace_with_elephant_image.svg" },
-  { "name": "Tiger", "src": "replace_with_tiger_image.svg" },
-  { "name": "Snake", "src": "replace_with_snake_image.svg" },
-  { "name": "Eagle", "src": "replace_with_eagle_image.svg" },
-  { "name": "Wolf", "src": "replace_with_wolf_image.svg" },
-  { "name": "Bear", "src": "replace_with_bear_image.svg" },
-  { "name": "Butterfly", "src": "replace_with_butterfly_image.svg" },
-  { "name": "Bee", "src": "replace_with_bee_image.svg" },
-  { "name": "Ant", "src": "replace_with_ant_image.svg" },
-  { "name": "Clownfish", "src": "replace_with_clownfish_image.svg" },
-  { "name": "Seahorse", "src": "replace_with_seahorse_image.svg" },
-  { "name": "Octopus", "src": "replace_with_octopus_image.svg" },
-  { "name": "Whale", "src": "replace_with_whale_image.svg" },
-  { "name": "Shark", "src": "replace_with_shark_image.svg" },
-  { "name": "Hippopotamus", "src": "replace_with_hippopotamus_image.svg" },
-  { "name": "Gorilla", "src": "replace_with_gorilla_image.svg" },
-  { "name": "Panda", "src": "replace_with_panda_image.svg" },
-  { "name": "Kangaroo", "src": "replace_with_kangaroo_image.svg" },
-  { "name": "Camel", "src": "replace_with_camel_image.svg" }
+  {
+    "id": 100,
+    "name": "Lion",
+    "src": "/Lion.png",
+    "match_found": false
+  },
+  {
+    "id": 100,
+    "name": "Zebra",
+    "src": "/Zebra.png",
+    "match_found": false
+  },
+  {
+    "id": 100,
+    "name": "Dolphin",
+    "src": "/Dolphin.png",
+    "match_found": false
+  },
+  {
+    "id": 100,
+    "name": "Penguin",
+    "src": "/Penguin.png",
+    "match_found": false
+  },
+  {
+    "id": 100,
+    "name": "Giraffe",
+    "src": "/Giraffe.png",
+    "match_found": false
+  },
+  {
+    "id": 100,
+    "name": "Koala",
+    "src": "/Koala.png",
+    "match_found": false
+  },
+  {
+    "id": 100,
+    "name": "Elephant",
+    "src": "/Elephant.png",
+    "match_found": false
+  },
+  {
+    "id": 100,
+    "name": "Tiger",
+    "src": "/Tiger.png",
+    "match_found": false
+  },
+  {
+    "id": 100,
+    "name": "Snake",
+    "src": "/Snake.png",
+    "match_found": false
+  },
+  {
+    "id": 100,
+    "name": "Eagle",
+    "src": "/Eagle.png",
+    "match_found": false
+  },
+  {
+    "id": 100,
+    "name": "Wolf",
+    "src": "/Wolf.png",
+    "match_found": false
+  },
+  {
+    "id": 100,
+    "name": "Bear",
+    "src": "/Bear.png",
+    "match_found": false
+  },
+  {
+    "id": 100,
+    "name": "Butterfly",
+    "src": "/Butterfly.png",
+    "match_found": false
+  },
+  {
+    "id": 100,
+    "name": "Bee",
+    "src": "/Bee.png",
+    "match_found": false
+  },
+  {
+    "id": 100,
+    "name": "Ant",
+    "src": "/Ant.png",
+    "match_found": false
+  },
+  {
+    "id": 100,
+    "name": "Clownfish",
+    "src": "/Clownfish.png",
+    "match_found": false
+  },
+  {
+    "id": 100,
+    "name": "Seahorse",
+    "src": "/Seahorse.png",
+    "match_found": false
+  },
+  {
+    "id": 100,
+    "name": "Octopus",
+    "src": "/Octopus.png",
+    "match_found": false
+  },
+  {
+    "id": 100,
+    "name": "Whale",
+    "src": "/Whale.png",
+    "match_found": false
+  },
+  {
+    "id": 100,
+    "name": "Shark",
+    "src": "/Shark.png",
+    "match_found": false
+  },
+  {
+    "id": 100,
+    "name": "Hippopotamus",
+    "src": "/Hippopotamus.png",
+    "match_found": false
+  },
+  {
+    "id": 100,
+    "name": "Gorilla",
+    "src": "/Gorilla.png",
+    "match_found": false
+  },
+  {
+    "id": 100,
+    "name": "Panda",
+    "src": "/Panda.png",
+    "match_found": false
+  },
+  {
+    "id": 100,
+    "name": "Kangaroo",
+    "src": "/Kangaroo.png",
+    "match_found": false
+  },
+  {
+    "id": 100,
+    "name": "Camel",
+    "src": "/Camel.png",
+    "match_found": false
+  }
 ]
