@@ -28,15 +28,23 @@ export default function AnimalList({
   }, [pair]);
 
   useEffect(() => {
-    console.log(matches.length, animals.length)
-    if (matches.length === animals.length && animals.length !== 0) alert('terminó el juego')
-  }, [matches])
+    if (matches.length === animals.length && animals.length !== 0) {
+      setMatches([]);
+      alert("terminó el juego");
+    }
+  }, [matches]);
 
   function checkItems(animalsSelected: IAnimal[]): void {
-    const [firstAnimal, secondAnimal] = animalsSelected
+    const [firstAnimal, secondAnimal] = animalsSelected;
     if (firstAnimal.name === secondAnimal.name) {
-      const newAnimals = animals.map(animal => animal.name === firstAnimal.name ? { ...animal, match_found: true } : animal)
-      const newMatches = newAnimals.filter(animal => animal.name === firstAnimal.name)
+      const newAnimals = animals.map((animal) =>
+        animal.name === firstAnimal.name
+          ? { ...animal, match_found: true }
+          : animal
+      );
+      const newMatches = newAnimals.filter(
+        (animal) => animal.name === firstAnimal.name
+      );
       setMatches((m) => [...m, ...newMatches]);
       updateMatchAnimals(newAnimals);
     }
@@ -45,17 +53,21 @@ export default function AnimalList({
     }, 1000);
   }
 
-
   function handleSetPairs(animal: IAnimal): void {
     if (pair.length === 2) return;
-    if (pair.find(a => a.id === animal.id)) return;
+    if (pair.find((a) => a.id === animal.id)) return;
     setPair((p) => [...p, animal]);
   }
 
   return (
     <div className="animal-container">
       {animals?.map((animal: IAnimal) => (
-        <AnimalCard key={animal.id} animal={animal} handleSetPairs={handleSetPairs} pair={pair} />
+        <AnimalCard
+          key={animal.id}
+          animal={animal}
+          handleSetPairs={handleSetPairs}
+          pair={pair}
+        />
       ))}
     </div>
   );
