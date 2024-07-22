@@ -28,14 +28,5 @@ export default function AnimalCard({
         </div>
       </div>
     </div>
-    // <section
-    //   onClick={() => handleSetPairs(animal)}
-    //   className={`animal-card ${animal.match_found ? "match" : ""} ${
-    //     pair.some((p) => p.id === animal.id) ? "selected" : ""
-    //   } `}
-    // >
-    //   <img src={`/assets/animals${animal.src}`} alt={animal.name} />
-    //   <h2>{animal.name}</h2>
-    // </section>
   );
 }
