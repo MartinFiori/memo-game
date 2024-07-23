@@ -1,8 +1,6 @@
 .animal-container {
-  background: green;
   height: calc(100vh - 19px);
   display: grid;
-  // grid-auto-rows: 1fr;
   grid-gap: .5rem;
   padding: .5rem;
 }

@@ -1,7 +1,7 @@
-import { ReactElement, useEffect, useState } from "react";
+import { ReactElement, useEffect, useRef, useState } from "react";
 import { IAnimal } from "../../types";
-import "./AnimalList.scss";
 import AnimalCard from "../AnimalCard/AnimalCard";
+import "./AnimalList.scss";
 
 interface Props {
   animals: IAnimal[];
@@ -20,6 +20,7 @@ export default function AnimalList({
 }: Props): ReactElement {
   const [pair, setPair] = useState<IAnimal[]>([]);
   const [matches, setMatches] = useState<IAnimal[]>([]);
+  const ref = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
     if (pair.length === 2) {
@@ -60,7 +61,7 @@ export default function AnimalList({
     setPair((p) => [...p, animal]);
   }
 
-  function renderTemplateColumns(amount: number): { [key: number]: number } {
+  function renderTemplateGrid(amount: number): { [key: number]: string } {
     const columns: { [key: number]: number } = {
       12: 6,
       18: 6,
@@ -80,17 +81,23 @@ export default function AnimalList({
       42: 6,
       48: 6,
     }
-
-    const style = {
-      gridTemplateColumns: `repeat(${columns[amount]}, 1fr)`,
-      gridTemplateRows: `repeat(${rows[amount]}, 1fr)`,
+    const node = ref.current
+    let style: { [key: string]: string } = {}
+    if (node) {
+      const { offsetWidth } = ref.current
+      if (offsetWidth > 920) {
+        style['gridTemplateColumns'] = `repeat(${columns[amount]}, 1fr)`
+        style['gridTemplateRows'] = `repeat(${rows[amount]}, 1fr)`
+      } else {
+        style['gridTemplateColumns'] = `repeat(${rows[amount]}, 1fr)`
+        style['gridTemplateRows'] = `repeat(${columns[amount]}, 1fr)`
+      }
     }
     return style
   }
 
-
   return (
-    <div className="animal-container" style={renderTemplateColumns(animals.length)}>
+    <div ref={ref} className="animal-container" style={renderTemplateGrid(animals.length)}>
       {animals?.map((animal: IAnimal) => (
         <AnimalCard
           key={animal.id}
