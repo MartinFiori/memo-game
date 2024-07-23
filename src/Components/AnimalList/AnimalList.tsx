@@ -54,6 +54,7 @@ export default function AnimalList({
   }
 
   function handleSetPairs(animal: IAnimal): void {
+    if (animal.match_found) return;
     if (pair.length === 2) return;
     if (pair.find((a) => a.id === animal.id)) return;
     setPair((p) => [...p, animal]);

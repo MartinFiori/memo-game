@@ -16,9 +16,8 @@ export default function AnimalCard({
 }: Props): ReactElement {
   return (
     <div
-      className={`flip-card ${animal.match_found ? "match" : ""} ${
-        pair.some((p) => p.id === animal.id) ? "selected" : ""
-      }`}
+      className={`flip-card ${animal.match_found ? "match selected" : ""} ${pair.some((p) => p.id === animal.id) ? "selected" : ""
+        }`}
       onClick={() => handleSetPairs(animal)}
     >
       <div className="flip-card-inner">
