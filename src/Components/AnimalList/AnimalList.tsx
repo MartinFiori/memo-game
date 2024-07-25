@@ -2,6 +2,7 @@ import { ReactElement, useEffect, useRef, useState } from "react";
 import { IAnimal } from "../../types";
 import AnimalCard from "../AnimalCard/AnimalCard";
 import "./AnimalList.scss";
+import wrongSound from '../../assets/sounds/success-sound.mp3'
 
 interface Props {
   animals: IAnimal[];
@@ -21,6 +22,7 @@ export default function AnimalList({
   const [pair, setPair] = useState<IAnimal[]>([]);
   const [matches, setMatches] = useState<IAnimal[]>([]);
   const ref = useRef<HTMLDivElement>(null)
+  const errorSound = new Audio(wrongSound)
 
   useEffect(() => {
     if (pair.length === 2) {
@@ -38,6 +40,7 @@ export default function AnimalList({
   function checkItems(animalsSelected: IAnimal[]): void {
     const [firstAnimal, secondAnimal] = animalsSelected;
     if (firstAnimal.name === secondAnimal.name) {
+      errorSound.play()
       const newAnimals = animals.map((animal) =>
         animal.name === firstAnimal.name
           ? { ...animal, match_found: true }
@@ -49,9 +52,11 @@ export default function AnimalList({
       setMatches((m) => [...m, ...newMatches]);
       updateMatchAnimals(newAnimals);
     }
+
     setTimeout(() => {
+      errorSound.pause()
       setPair([]);
-    }, 1000);
+    }, 1500);
   }
 
   function handleSetPairs(animal: IAnimal): void {

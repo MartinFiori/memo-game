@@ -34,6 +34,10 @@ module.exports = {
         test: /\.(?:ico|gif|png|jpg|jpeg)$/i,
         type: "asset/resource",
       },
+      {
+        test: /\.mp3$/,
+        loader: "file-loader",
+      },
     ],
   },
   output: {
